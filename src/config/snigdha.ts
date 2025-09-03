@@ -47,26 +47,26 @@ export const projectsData: Project[] = [
   {
     title: 'EchoFlow Chat',
     description: 'Real-time chat application using MERN stack and Socket.IO. Designed sleek UI, enabled instantaneous communication, and scalable architecture.',
-    imageUrl: 'https://via.placeholder.com/1000x600?text=EchoFlow+Chat',
+    imageUrl: '/chat.png',
     tags: ['ReactJS', 'NodeJS', 'ExpressJS', 'MongoDB', 'Socket.IO'],
-    githubUrl: 'https://github.com/snigdha2808',
+    githubUrl: 'https://github.com/snigdha2808/socketChatAppReact',
     status: 'Completed'
   },
   
   {
     title: 'Invoice Generator',
     description: 'Dynamic invoice generation platform integrated with Razorpay. Features real-time updates and sleek UI.',
-    imageUrl: 'https://via.placeholder.com/1000x600?text=Invoice+Generator',
+    imageUrl: '/invoice.jpg',
     tags: ['ReactJS', 'NodeJS', 'ExpressJS', 'MongoDB', 'Razorpay'],
-    githubUrl: 'https://github.com/snigdha2808',
+    githubUrl: 'https://github.com/snigdha2808/EasyInvoice',
     status: 'Completed'
   },
   {
     title: 'Panel Game',
     description: 'Interactive quiz game built on MERN stack. Supports dynamic questions and real-time scoring.',
-    imageUrl: 'https://via.placeholder.com/1000x600?text=Panel+Game',
+    imageUrl: '/quiz.jpg',
     tags: ['ReactJS', 'NodeJS', 'ExpressJS', 'MongoDB'],
-    githubUrl: 'https://github.com/snigdha2808',
+    githubUrl: 'https://github.com/snigdha2808/Panel_Game',
     status: 'Completed'
   }
 ];
