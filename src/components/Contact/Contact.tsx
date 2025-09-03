@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
           
           <div className={styles.linksContainer}>
             <a 
-              href="mailto:skilladi123@gmail.com" 
+              href="mailto:snigdhagupta2802@gmail.com" 
               className={`${styles.linkCard} ${styles.cardHover}`}
               aria-label="Send email"
             >

@@ -71,27 +71,6 @@ export const projectsData: Project[] = [
   }
 ];
 
-export const additionalTech = [
-  'TypeScript',
-  'JavaScript',
-  'React',
-  'Node.js',
-  'Express',
-  'MongoDB',
-  'Redux',
-  'HTML5',
-  'CSS3',
-  'Git',
-  'REST APIs',
-  'Socket.IO',
-  'Firebase',
-  'AWS S3',
-  'Razorpay',
-  'Responsive Design',
-  'Tailwind CSS',
-  'Vite'
-];
-
 export const nameAndDescriptionData: NameAndDescription = {
   name: 'Snigdha Gupta',
   summary: `I specialize in building fast, interactive, and scalable web applications with clean, maintainable code.`,
