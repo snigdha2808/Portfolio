@@ -1,0 +1,141 @@
+.name-and-description {
+    background-image: url('src/assets/Screenshot from 2025-06-25 23-22-48.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.name-and-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker black overlay */
+    z-index: 1;
+}
+
+.name-and-description > * {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.gradientTxt {
+    color: transparent;
+    background: linear-gradient(90deg, #4ecdc4, #556270);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
+}
+
+.name-and-description p {
+    color: white;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin: 1rem 0;
+    max-width: 800px;
+    padding: 0 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.gradientTxt, .Hello {
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .name-and-description {
+        padding: 1rem;
+    }
+    
+    .gradientTxt {
+        font-size: 2rem;
+    }
+    
+    .name-and-description p {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gradientTxt {
+        font-size: 1.75rem;
+    }
+    
+    .name-and-description p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+.developer-title {
+    color: #4ECDC4;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin: 0.5rem 0;
+}
+
+.gradientTxt {
+    color: transparent;
+    background: linear-gradient(90deg,#4ecdc4,#556270);
+    -webkit-background-clip: text;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    background-color: white;
+    color: #242424;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.github-button {
+    background: linear-gradient(90deg, #4ecdc4, #556270);
+    color: white;
+}
+
+.github-button:hover {
+    background: linear-gradient(90deg, #4ecdc4, #667085);
+}
+
+.download-button {
+    background: linear-gradient(90deg, #4ecdc4, #556270);
+    color: white;
+}
+
+.download-button:hover {
+    background: linear-gradient(90deg, #4ecdc4, #667085);
+}  

@@ -1,0 +1,47 @@
+/* Base footer styles */
+.footer {
+    padding: 2rem 0;
+    border-top: 1px solid #2d3748; /* gray-800 equivalent */
+    background-color: #0a0a0a;
+    color: #ffffff;
+  }
+  
+  /* Container styles */
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  
+  /* Text styles */
+  .text {
+    color: #9ca3af; /* gray-400 equivalent */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem; /* leading-normal */
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
