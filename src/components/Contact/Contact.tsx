@@ -49,6 +49,7 @@ const Contact: React.FC = () => {
                 <FaLinkedin className={`${styles.linkIcon} ${styles.bounceOnHover}`} />
                 <span>LinkedIn</span>
               </div>
+        
             </a>
           </div>
         </div>
