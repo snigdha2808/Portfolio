@@ -12,6 +12,7 @@ export default defineConfig({
     cors: true, // Enable CORS for all origins
     allowedHosts: [
       'physically-forty-watts-stan.trycloudflare.com',
+      'refugees-forces-cold-chapel.trycloudflare.com',
       'localhost',
       '127.0.0.1'
     ],

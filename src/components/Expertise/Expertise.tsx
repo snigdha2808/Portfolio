@@ -1,7 +1,7 @@
 import React from 'react';
 import { CodeXml, Server, Database, Terminal, Braces, Cpu } from 'lucide-react';
 import { ExpertiseCard } from './ExpertiseCard';
-import { expertiseData, additionalTech} from '../../config/snigdha';
+import { expertiseData } from '../../config/snigdha';
 import {type ExpertiseItem } from '../../config/types/config.types';
 import './Expertise.css';
 import { nameAndDescriptionData } from '../../config/snigdha';
@@ -55,18 +55,6 @@ export const Expertise: React.FC = () => {
               />
             );
           })}
-        </div>
-
-        <div className="additional-tech">
-          <h3 className="additional-tech-title">Additional Technologies</h3>
-          <div className="tech-tags-container">
-            {additionalTech.map((tech, index) => (
-              <div className="tech-tag" key={tech.text}>
-                <DynamicIcon name={tech.icon} />
-                <span>{tech.text}</span>
-              </div>           
-            ))}
-          </div>
         </div>
       </div>
     </section>

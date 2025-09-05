@@ -73,7 +73,7 @@ export const projectsData: Project[] = [
 
 export const nameAndDescriptionData: NameAndDescription = {
   name: 'Snigdha Gupta',
-  summary: `I specialize in building fast, interactive, and scalable web applications with clean, maintainable code.`,
+  summary: 'I craft high-performance, user-centric web applications that are fast, scalable, and built on clean, maintainable code',
   title: 'FRONT-END DEVELOPER',
   githubUrl: 'https://github.com/snigdha2808',
   cvUrl: '/snigdha_resume1.pdf',
