@@ -2,14 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { nameAndDescriptionData } from '../../config/snigdha';
 import './Header.css';
 
-interface HeaderProps {
-  links: {
-    about: string;
-    projects: string;
-    contact: string;
-  };
-}
-
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {
@@ -17,7 +9,7 @@ const scrollToSection = (sectionId: string) => {
   }
 };
 
-export const Header: React.FC<HeaderProps> = ({ links }) => {
+export const Header: React.FC = () => {
   const [nameInitials, setNameInitials] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 

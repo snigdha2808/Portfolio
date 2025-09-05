@@ -1,5 +1,4 @@
 import './App.css'
-// import './components/Header/Header.css'
 import Header from './components/Header/Header';
 import NameAndDescription from './components/NameAndDescription/NameAndDescription';
 import { Expertise } from './components/Expertise/Expertise';
@@ -9,17 +8,9 @@ import Footer from './components/footer/Footer';
 import ExperienceSection from './components/Experience/ExperienceSection';
 
 function App() {
-  const links = {
-    about: '#about',
-    projects: '#projects',
-    contact: '#contact'
-  };
-
   return (
     <>
-      <Header
-        links={links}
-      />
+      <Header />
       <main className="main-content">
         <section id="about">
           <NameAndDescription/>

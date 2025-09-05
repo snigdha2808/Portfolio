@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import styles from './ExperienceItem.module.css';
 import { LucideCalendar } from 'lucide-react';
-import type { TimelineItem } from '../../config/snigdha';
+import type { TimelineItem } from '../../config/types/config.types';
 
 export interface ExperienceItemProps {
   item: TimelineItem;
@@ -17,7 +17,7 @@ export const ExperienceItem: FC<ExperienceItemProps> = ({ item }) => {
           <p className={styles.company}>{item.company}</p>
           <p className={styles.period}>{item.period}</p>
           <ul className={styles.responsibilities}>
-            {item.responsibilities.map((responsibility, index) => (
+            {item.responsibilities.map((responsibility: string, index: number) => (
               <li key={index} className={styles.responsibilityItem}>
                 <span className={styles.bulletPoint}></span>
                 {responsibility}

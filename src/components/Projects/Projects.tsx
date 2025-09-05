@@ -3,7 +3,7 @@ import { Briefcase } from 'lucide-react';
 import { ProjectCard } from './ProjectCard';
 import './Projects.css';
 import { projectsData } from '../../config/snigdha';
-import type { Project } from '../../config/snigdha';
+import type { Project } from '../../config/types/config.types';
 
 export const Projects: React.FC = () => {
   return (
