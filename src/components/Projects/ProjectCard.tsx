@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import './Projects.css';
 
 interface ProjectCardProps {
@@ -8,7 +8,7 @@ interface ProjectCardProps {
   imageUrl: string;
   tags: string[];
   githubUrl: string;
-  status: 'Completed' | 'In Progress';
+  status: string;
   animationDelay?: number;
 }
 
@@ -18,46 +18,33 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   tags,
   githubUrl,
-  status,
   animationDelay = 0,
 }) => {
   return (
-    <div 
+    <div
       className="project-card"
-      style={{
-        animationDelay: `${animationDelay}ms`,
-      }}
+      style={{ animationDelay: `${animationDelay}ms` }}
     >
-      <div className="project-image-container">
-        <img
-          src={imageUrl}
-          alt={title}
-          className="project-image"
-          loading="lazy"
-        />
+      <div className="project-card-image">
+        <img src={imageUrl} alt={title} loading="lazy" />
       </div>
-      <div className="project-content">
-        <h3 className="project-name">{title}</h3>
-        <p className="project-description">{description}</p>
-        <div className="project-tags">
-          {tags.map((tag, index) => (
-            <span key={index} className="project-tag">
-              {tag}
-            </span>
+      <div className="project-card-content">
+        <h3 className="project-card-title">{title}</h3>
+        <div className="project-card-tags">
+          {tags.map((tag) => (
+            <span key={tag} className="project-card-tag">{tag}</span>
           ))}
         </div>
-        <div className="project-links">
-          <a 
-            href={githubUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="project-link"
-          >
-            <Github className="project-link-icon" />
-            GitHub
-          </a>
-          <span className="project-status">{status}</span>
-        </div>
+        <p className="project-card-desc">{description}</p>
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-card-link"
+          aria-label={`View ${title} on GitHub`}
+        >
+          <ArrowUpRight size={20} />
+        </a>
       </div>
     </div>
   );

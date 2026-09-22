@@ -1,27 +1,20 @@
 import React from 'react';
-import { Briefcase } from 'lucide-react';
 import { ProjectCard } from './ProjectCard';
-import './Projects.css';
 import { projectsData } from '../../config/snigdha';
-import type { Project } from '../../config/types/config.types';
+import './Projects.css';
 
 export const Projects: React.FC = () => {
   return (
-    <section id="projects" className="projects-section">
-      <div className="projects-container">
-        <div className="projects-header">
-          <Briefcase className="projects-icon" />
-          <h2 className="projects-title">Featured Projects</h2>
-        </div>
-        
-        <div className="projects-grid">
-          {projectsData.map((project: Project, index) => (
-            <ProjectCard
-              key={`${project.title}-${index}`}
-              {...project}
-              status={project.status as 'Completed' | 'In Progress'}
-              animationDelay={index * 200}
-            />
+    <section id="projects" className="section projects-section">
+      <div className="section-container">
+        <h2 className="section-title">Featured Projects</h2>
+        <p className="section-subtitle projects-subtitle">
+          A selection of projects showcasing my skills in full-stack development and UI design.
+        </p>
+
+        <div className="projects-list">
+          {projectsData.map((project, index) => (
+            <ProjectCard key={project.title} {...project} animationDelay={index * 150} />
           ))}
         </div>
       </div>

@@ -2,6 +2,8 @@ export interface TimelineItem {
   id: string;
   title: string;
   company: string;
+  companyInitial?: string;
+  location?: string;
   period: string;
   responsibilities: string[];
 }
@@ -16,20 +18,29 @@ export interface Project {
   demoUrl?: string;
 }
 
-export interface NameAndDescription {
+export interface ProfileData {
   name: string;
-  summary: string;
+  greeting: string;
   title: string;
+  summary: string;
+  bio: string[];
+  location: string;
+  experienceYears: string;
+  email: string;
+  phone: string;
   githubUrl: string;
   cvUrl: string;
-  MyExpertise: string;
-  linkedinUrl?: string;
+  linkedinUrl: string;
 }
 
-export interface TechItem {
+export interface ValueItem {
+  title: string;
+  description: string;
+}
+
+export interface TechStackItem {
+  name: string;
   icon: string;
-  text: string;
-  className?: string;
 }
 
 export interface ExpertiseItem {
@@ -37,6 +48,18 @@ export interface ExpertiseItem {
   description: string;
   icon: string;
   tags: string[];
-  gradient: string;
-  iconClassName?: string;
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  year: string;
+}
+
+export interface ContactInfo {
+  email: string;
+  phone: string;
+  location: string;
+  linkedinUrl: string;
 }

@@ -1,56 +1,96 @@
 import React, { useEffect, useState } from 'react';
-import { nameAndDescriptionData } from '../../config/snigdha';
+import { Menu, X, Moon, Sun } from 'lucide-react';
+import { profileData } from '../../config/snigdha';
 import './Header.css';
 
+const navLinks = [
+  { label: 'Home', id: 'home' },
+  { label: 'About', id: 'about' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Education', id: 'education' },
+  { label: 'Contact', id: 'contact' },
+];
+
 const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 };
 
 export const Header: React.FC = () => {
-  const [nameInitials, setNameInitials] = useState('');
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const getNameInitials = nameAndDescriptionData.name.split(' ')[0].split('')[0] + nameAndDescriptionData.name.split(' ')[1].split('')[0];
-    setNameInitials(getNameInitials);
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 700);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const saved = localStorage.getItem('theme') as 'dark' | 'light' | null;
+    if (saved) {
+      setTheme(saved);
+      document.documentElement.setAttribute('data-theme', saved);
+    }
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    scrollToSection(sectionId);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  };
+
+  const handleNavClick = (id: string) => {
+    scrollToSection(id);
+    setMenuOpen(false);
   };
 
   return (
-    <header className="header">
-      <div className="header-content">
-        <span 
-          className="header-name"
-          onClick={() => scrollToSection('about')}
-          style={{ cursor: 'pointer' }}
+    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+      <div className="header__inner section-container">
+        <button
+          className="header__logo"
+          onClick={() => handleNavClick('home')}
+          aria-label="Go to home"
         >
-          {isMobile ? nameInitials : nameAndDescriptionData.name}
-        </span>
-        <nav className="header-nav">
-          <a href="#about" onClick={(e) => handleNavClick(e, 'expertise')}>About</a>
-          {/* <a href="#expertise" onClick={(e) => handleNavClick(e, 'about')}>Expertise</a> */}
-          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
+          {profileData.name}
+        </button>
+
+        <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              className="header__nav-link"
+              onClick={() => handleNavClick(link.id)}
+            >
+              {link.label}
+            </button>
+          ))}
         </nav>
+
+        <div className="header__actions">
+          <button
+            className="header__theme-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+
+          <button
+            className="header__menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
     </header>
   );
 };
-
-Header.displayName = 'Header';
 
 export default Header;

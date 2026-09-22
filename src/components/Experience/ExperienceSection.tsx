@@ -1,15 +1,23 @@
-import { useState } from 'react';
-import Experience from './Experience';
+import React from 'react';
+import { experienceData } from '../../config/snigdha';
+import { ExperienceItem } from './ExperienceItem';
+import './Experience.css';
 
-const ExperienceSection = () => {
-  const [activeTab, setActiveTab] = useState<'experience' | 'education'>('experience');
-
+const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-16">
-      <Experience 
-        activeTab={activeTab}
-        onTabChange={setActiveTab}
-      />
+    <section id="experience" className="section experience-section">
+      <div className="section-container">
+        <h2 className="section-title">Work Experience</h2>
+        <p className="section-subtitle experience-subtitle">
+          My professional journey building impactful web applications.
+        </p>
+
+        <div className="experience-timeline">
+          {experienceData.map((item) => (
+            <ExperienceItem key={item.id} item={item} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

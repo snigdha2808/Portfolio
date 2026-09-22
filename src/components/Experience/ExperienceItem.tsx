@@ -1,30 +1,41 @@
-import { type FC } from 'react';
-import styles from './ExperienceItem.module.css';
-import { LucideCalendar } from 'lucide-react';
+import React from 'react';
 import type { TimelineItem } from '../../config/types/config.types';
+import './Experience.css';
 
-export interface ExperienceItemProps {
+interface ExperienceItemProps {
   item: TimelineItem;
 }
 
-export const ExperienceItem: FC<ExperienceItemProps> = ({ item }) => {
+export const ExperienceItem: React.FC<ExperienceItemProps> = ({ item }) => {
+  const initial = item.companyInitial || item.company.charAt(0);
+
   return (
-    <div className={styles.itemContainer}>
-      <div className={styles.itemContent}>
-        <LucideCalendar className={styles.calendarIcon} />
-        <div>
-          <h3 className={styles.itemTitle}>{item.title}</h3>
-          <p className={styles.company}>{item.company}</p>
-          <p className={styles.period}>{item.period}</p>
-          <ul className={styles.responsibilities}>
-            {item.responsibilities.map((responsibility: string, index: number) => (
-              <li key={index} className={styles.responsibilityItem}>
-                <span className={styles.bulletPoint}></span>
-                {responsibility}
-              </li>
-            ))}
-          </ul>
+    <div className="experience-item">
+      <div className="experience-item-marker">
+        <div className="experience-item-dot" />
+        <div className="experience-item-line" />
+      </div>
+
+      <div className="experience-item-body">
+        <div className="experience-item-header">
+          <div className="experience-item-company-row">
+            <div className="experience-item-logo">{initial}</div>
+            <div>
+              <h3 className="experience-item-company">{item.company}</h3>
+              <p className="experience-item-title">{item.title}</p>
+              {item.location && (
+                <p className="experience-item-location">{item.location}</p>
+              )}
+            </div>
+          </div>
+          <span className="experience-item-period">{item.period}</span>
         </div>
+
+        <ul className="experience-item-responsibilities">
+          {item.responsibilities.map((resp, i) => (
+            <li key={i}>{resp}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

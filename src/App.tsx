@@ -1,34 +1,30 @@
-import './App.css'
+import './App.css';
 import Header from './components/Header/Header';
-import NameAndDescription from './components/NameAndDescription/NameAndDescription';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
 import { Expertise } from './components/Expertise/Expertise';
 import Projects from './components/Projects/Projects';
+import ExperienceSection from './components/Experience/ExperienceSection';
+import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
 import Footer from './components/footer/Footer';
-import ExperienceSection from './components/Experience/ExperienceSection';
 
 function App() {
   return (
     <>
       <Header />
       <main className="main-content">
-        <section id="about">
-          <NameAndDescription/>
-        </section>
-        <section id="expertise">
-          <Expertise />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
+        <Hero />
+        <About />
+        <Expertise />
+        <Projects />
         <ExperienceSection />
-        <section id="contact">
-          <Contact />
-        </section>
+        <Education />
+        <Contact />
         <Footer />
       </main>
     </>
-  )
+  );
 }
 
 export default App;
